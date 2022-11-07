@@ -1,0 +1,53 @@
+.back-image {
+  background-image: url("https://t4.ftcdn.net/jpg/02/15/94/83/360_F_215948377_kgIhNUy4X0iYsyUfYd9KKIViSPOxclbC.jpg");
+
+}
+
+.img-size {
+  width: 5x;
+  height: 5px;
+}
+
+
+.da-img {
+  transition: all .1s ease-in;
+  height: 500px;
+  width: 600;
+  padding-inline-start: 15em;
+}
+
+#da-img :hover {
+  transform: scale(1.10);
+}
+
+#da-img :active {
+  transform: scale(5.0);
+}
+
+.container-size {
+  width: 300px;
+  height: 300px;
+  color: black;
+  background-color: rgb(241, 225, 0);
+  padding: .5em;
+}
+
+.power-style {
+  background-color: black;
+  color: rebeccapurple
+}
+
+.images-size {
+  width: 80px;
+  height: 80px;
+}
+
+.upgrades-screen {
+  height: 200px;
+  width: 200;
+  background-color: rebeccapurple;
+}
+
+.nugs-got {
+  height: 30px;
+}

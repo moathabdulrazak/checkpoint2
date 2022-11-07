@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class=" containr-fluid back-image">
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <section class="row container-fluid justify-content-center align-items-center">
+      <div class="col-10 d-flex justify-content-center align-items-center mt-2 ">
+        <img class="da-img hover" src="assets\BigChickenCIU.webp" onclick="getChicks()" alt="">
+      </div>
+      <div class="col-2 card mt-1 d-flex">
+        <h3>inventory</h3>
+        <h1>pickaxe: <span id="pickaxe-quantity">0</span></h1>
+        <h1>stick: <span id="stick-quantity">0</span></h1>
+        <h1>SauOce <span id="sauce-quantity">0</span></h1>
+        <h1>bruh <span id="bruh-quantity">0</span> </h1>
+      </div>
+      <section class="row justify-content-center">
+        <div class="col-5  card  bg-white">
+          <div class="col-3 container   d-flex justify-content-center">
+            <h3>got nugs:<span id="chickenNug">0</span> </h3>
+          </div>
+          <div class="col-12 d-flex justify-content-between">
+            <h3>mypower <span id="power">1</span></h3>
+            <h3>Auto nugs: <span id="autoNug"> </span></h3>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="row container-fluid">
+
+    </section>
+
+    <section class="row container-fluid justify-content-center">
+      <div class="card d-flex col-12 justify-content-center">
+        <h1 class="text-center ">upgrades</h1>
+        <div class="col-3 d-flex justify-content-between flex-strech">
+          <img class="images-size" src="Diamond_Pickaxe_JE3_BE3.webp" onclick="buyClickUpgrade('pickaxe')" alt="">
+          <h4 class="p-2">Pickaxe </h4>
+          <h4 class="p-2">price:<span id="pickaxe-price">100</span> </h4>
+          <h4 class="p-2">strength <span id="pickaxe-strength">5</span> </h4>
+          <img class="images-size " src="assets\stick-official-the-forest-wiki-26.png"
+            onclick="buyClickUpgrade('stick')" alt="">
+          <h4 class="p-2">stick</h4>
+          <h4 class="p-2">price:<span id="stick-price">1</span> </h4>
+          <h4 class="p-2">strength <span id="stick-strength"></span> </h4>
+          <img class="images-size " src="assets\sauce_PNG110.png" onclick="buyAutomaticUpgrades('sauce')" alt="">
+          <h4 class="p-2">sauce</h4>
+          <h4 class="p-2">price: <span id="sauce-price">1</span> </h4>
+          <h4 class="p-2">sauce strength<span id="sauce-strength">0</span> </h4>
+          <h4></h4>
+          <img class="images-size " src="emojisky.com-65573.png" onclick="buyAutomaticUpgrades('bruh')" alt="">
+          <h3 class="p-2">Bruh </h3>
+          <h3 class="p-2"> <span id="bruh-price"></span> price:</h3>
+          <h3 class="p-2"><span id="bruh-strength"></span> strength:</h3>
+          <div>
+          </div>
+        </div>
+    </section>
+
+    <section class="row container-fluid">
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
