@@ -13,25 +13,26 @@ let clickUpgrades = [
     quantity: 0,
     multiplier: 1
   },
-];
-
-let automaticUpgrades = [
   {
     name: 'bruh',
     price: 300,
     quantity: 0,
-    multiplier: 5
+    multiplier: 10
   },
+];
+
+let automaticUpgrades = [
+
   {
     name: 'sauce',
     price: 500,
     quantity: 0,
-    multiplier: 10
+    multiplier: 5
   }
 
 ];
 
-let chickClick = 100;
+let chickClick = 800;
 let power = 1
 let autoUpgradePower = 0
 
@@ -52,7 +53,10 @@ function getUpgradeChiks() {
 function update(purchasedUpgrade) {
   console.log("Pass", purchasedUpgrade)
   // @ts-ignore
-  let chickElm = document.getElementById('chickenNug').innerText = chickClick
+  // @ts-ignore
+  // @ts-ignore
+
+  document.getElementById('chickenNug').innerText = chickClick
   // @ts-ignore
 
   if (purchasedUpgrade) {
@@ -85,10 +89,14 @@ function buyClickUpgrade(clickUpgradeName) {
     chickClick -= purchasedUpgrade.price
 
     // purchasedUpgrade.multiplier++
+    // @ts-ignore
     purchasedUpgrade.quantity++
+    // @ts-ignore
     if (purchasedUpgrade.name == "pickaxe") {
+      // @ts-ignore
       purchasedUpgrade.price += 10
     } else {
+      // @ts-ignore
       purchasedUpgrade.price *= 10
     }
     // @ts-ignore
@@ -159,37 +167,24 @@ function buyClickUpgrade(clickUpgradeName) {
 
 
 
-function buyAutomaticUpgrades() {
-  automaticUpgrades.find(a => {
-    if (a.price < chickClick)
-      chickClick -= a.price
-    automaticUpgrades.find(a => {
-      chickClick += a.multiplier * a.quantity
-      a.quantity++
-      if (a.name == "sauce") {
-        a.price += 1
-      } else {
-        a.price += 1
-      }
-    })
-    console.log("price", buyAutomaticUpgrades);
-
-    autoUpgradePower += (a.multiplier * a.quantity)
-    // autoUpgrade()
-    document.getElementById(`${a.name}-quantity`).innerText = a.quantity
-    document.getElementById(`${a.name}-quantity`).innerText = a.quantity
-    document.getElementById(`${a.name}-price`).innerText = a.price
-    document.getElementById(`${a.name}-price`).innerText = a.price
-    document.getElementById(`${a.name}-strength`).innerText = a.multiplier * a.quantity
-    document.getElementById(`${a.name}-strength`).innerText = a.multiplier * a.quantity
-    setInterval(buyAutomaticUpgrades, 3000)
-    update()
-  })
-}
 
 
+
+// setInterval(autoUpgrade, 3000)
 
 function autoUpgrade() {
+
+  automaticUpgrades.forEach(a => {
+    if (a.quantity > 0) {
+      chickClick += a.multiplier * a.quantity
+    }
+  })
+
+  // @ts-ignore
+  document.getElementById('chickenNug').innerText = chickClick
+
+
+
   // automaticUpgrades.find(a => {
   //   chickClick += a.multiplier + a.quantity
   //   a.quantity++
@@ -199,9 +194,62 @@ function autoUpgrade() {
   //     a.price += 1
   //   }
   // })
-  update()
+  // update()
 }
 
+function buyAutomaticUpgrades(upgradeName) {
+  // debugger
+
+  let autoUpgraded = automaticUpgrades.find(a => a.name == upgradeName)
+  console.log(autoUpgraded);
+
+  // @ts-ignore
+  if (autoUpgraded.price <= chickClick) {
+    // @ts-ignore
+    chickClick -= autoUpgraded.price
+    // @ts-ignore
+    autoUpgraded.quantity += 1
+    autoUpgraded.price *= 2
+    autoUpgraded.multiplier += 10
+    console.log(autoUpgraded);
+    // @ts-ignore
+    autoUpgradePower = autoUpgraded.multiplier * autoUpgraded.quantity
+  }
+  // @ts-ignore
+  document.getElementById("autoNug").innerText = autoUpgradePower
+  document.getElementById(`${autoUpgraded.name}-quantity`).innerText = autoUpgraded.quantity
+  document.getElementById(`${autoUpgraded.name}-price`).innerText = autoUpgraded.price
+  document.getElementById(`${autoUpgradePower.name}-strength`).innerText = autoUpgraded.multiplier * autoUpgraded.quantity
+  autoUpgrade()
+  // update(autoUpgraded)
+
+  // automaticUpgrades.find(a => {
+  //   if (a.price <= chickClick)
+  //     chickClick -= a.price
+  //   automaticUpgrades.find(a => {
+  //     chickClick += a.multiplier * a.quantity
+  //     a.quantity++
+  //     if (a.name == "sauce") {
+  //       a.price += 1
+  //     } else {
+  //       a.price += 1
+  //     }
+  //   })
+  //   console.log("price", buyAutomaticUpgrades);
+
+  //   autoUpgradePower += (a.multiplier * a.quantity)
+  //   // autoUpgrade()
+  //   document.getElementById(`${a.name}-quantity`).innerText = a.quantity
+  //   document.getElementById(`${a.name}-quantity`).innerText = a.quantity
+  //   document.getElementById(`${a.name}-price`).innerText = a.price
+  //   document.getElementById(`${a.name}-price`).innerText = a.price
+  //   document.getElementById(`${a.name}-strength`).innerText = a.multiplier * a.quantity
+  //   document.getElementById(`${a.name}-strength`).innerText = a.multiplier * a.quantity
+  // })
+  // @ts-ignore
+}
+
+setInterval(autoUpgrade, 3000)
 
 
 
